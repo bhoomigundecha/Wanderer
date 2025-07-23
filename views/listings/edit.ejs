@@ -6,25 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="/listings">
-        <input name="title" placeholder="enter title">
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+        <input name="title" value="<%= listing.title %>" type="text" />
         <br />
 
-        <textarea name="description" placeholder="enter description"> </textarea>
+        <textarea name="description"><%= listing.description %></textarea>
         <br />
 
-        <input name="image" placeholder="enter image url/link" type="string">
+        <input name="image" value="<%= listing.image %>" type="text" />
         <br />
-        
-        <input name="price" placeholder="enter price" type="number">
+
+        <input name="price" value="<%= listing.price %>" type="number" />
         <br />
-        
-        <input name="country" placeholder="enter location">
+
+        <input name="country" value="<%= listing.country %>" type="text" />
         <br />
-        
-        <input name="location" placeholder="enter country">
+
+        <input name="location" value="<%= listing.location %>" type="text" />
         <br />
-        <button> Add </button>
+
+        <button type="submit">Edit</button>
     </form>
+
 </body>
 </html>
