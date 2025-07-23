@@ -15,6 +15,16 @@ main().then(()=>{
 async function main(){
     await mongoose.connect(MONGO_URL);
 }
+
+app.get("/", (req, res)=>{
+    res.send("Hello I am root");
+});
+
+app.get("/listings", (req, res)=>{
+    Listing.find({}).then((res)=>{
+        console.log(res);
+    });
+});
 app.listen(8080, ()=>{
     console.log(`Listening to port 8080`);
-})
+});

@@ -8,10 +8,16 @@ const listingSchema = new Schema({
         required : true,
     },
     description : String,
-    image : {
-        type : String, 
-        default : "https://unsplash.com/photos/a-person-standing-in-the-middle-of-a-desert-at-night-GCrvnNHJAMo",
-        set : (v) => v === "" ? "https://unsplash.com/photos/a-person-standing-in-the-middle-of-a-desert-at-night-GCrvnNHJAMo" : v,
+    image: {
+        filename: {
+            type: String,
+            default: "listingimage"
+        },
+        url: {
+            type: String,
+            default: "https://unsplash.com/photos/a-person-standing-in-the-middle-of-a-desert-at-night-GCrvnNHJAMo",
+            set: (v) => v === "" ? "https://unsplash.com/photos/a-person-standing-in-the-middle-of-a-desert-at-night-GCrvnNHJAMo" : v
+        }
     },
     price : Number,
     location : String,
